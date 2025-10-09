@@ -1,0 +1,111 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hagat Defence Technologies</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.svg" />
+    <link rel="stylesheet" href="~/Studiova-1.0.0/assets/libs/owl.carousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Studiova-1.0.0/assets/libs/aos-master/dist/aos.css">
+    <link rel="stylesheet" href="~/Studiova-1.0.0/assets/css/styles.css" />
+</head>
+
+<body id="top" style="margin:0; padding:0; background-color:#000333;">
+
+    @await Html.PartialAsync("_HeaderPartial")
+
+    <!-- Sayfa Bölümleri -->
+    <div id="products-section">
+        @await Html.PartialAsync("ProductPartial")
+    </div>
+
+    <div id="whatwedo-section">
+        @await Html.PartialAsync("WhatWeDoPartial")
+    </div>
+
+    <div id="references-section">
+        @await Html.PartialAsync("ReferencePartial")
+    </div>
+
+    <div id="recentnews-section">
+        @await Html.PartialAsync("RecentNewPartial")
+    </div>
+
+    <div id="contact-section">
+        @await Html.PartialAsync("ContactPartial")
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="get-template hstack gap-2">
+        <button class="btn p-2 round-64 rounded-circle hstack justify-content-center flex-shrink-0"
+                id="scrollToTopBtn" style="background-color:#940000;">
+            <img src="~/Studiova-1.0.0/assets/images/svgs/rocket-top.svg"
+                 alt="Rocket Top" class="img-fluid" style="width:48px; height:48px;">
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="~/Studiova-1.0.0/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/Studiova-1.0.0/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Studiova-1.0.0/assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="~/Studiova-1.0.0/assets/libs/aos-master/dist/aos.js"></script>
+    <script src="~/Studiova-1.0.0/assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <script>
+        // Header scroll görünürlüğü
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.querySelector(".header");
+            window.addEventListener("scroll", function () {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 250) {
+                    header.classList.add("show");
+                } else {
+                    header.classList.remove("show");
+                }
+            });
+        });
+
+               document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute("href").substring(1);
+                const targetEl = document.getElementById(targetId);
+
+                if (targetEl) {
+                    window.scrollTo({
+                        top: targetEl.offsetTop - 80, // header yüksekliği kadar boşluk bırak
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+
+        // Scroll to Top
+        document.getElementById("scrollToTopBtn").addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+    <style>
+        /* Başlangıçta header gizli */
+        .header {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+            /* Scroll sonrası header görünür */
+            .header.show {
+                transform: translateY(0);
+            }
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: hagat-web
+    env: dotnet
+    region: frankfurt
+    plan: free
+    buildCommand: dotnet publish ./Hagat_Web1 -c Release -o out
+    startCommand: dotnet out/Hagat_Web1.dll
+    autoDeploy: true
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
