@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hagat Defence Technologies</title>
+    <title>Studiova</title>
     <link rel="shortcut icon" type="image/png" href="~/Studiova-1.0.0/assets/images/logos/favicon.svg" />
     <link rel="stylesheet" href="~/Studiova-1.0.0/assets/libs/owl.carousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="~/Studiova-1.0.0/assets/libs/aos-master/dist/aos.css">
@@ -26,7 +26,7 @@
                     </a>
                 </div>
                 <div class="d-flex align-items-center gap-4">
-
+                    @* 
                     <div class="btn-group">
                         <button class="btn btn-secondary toggle-menu round-45 p-2 d-flex align-items-center justify-content-center bg-white rounded-circle"
                                 type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
@@ -102,10 +102,10 @@
                                 </div>
                             </div>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </div> *@
+                    @*  </div>
+            </div> *@
+                    @* </div> *@
     </header>
 
     <!--  Page Wrapper -->
@@ -116,19 +116,19 @@
                  style="background-image: url('@Url.Content("~/Studiova-1.0.0/assets/images/portfolio/f1.jpg")');">
             <div class="container">
                 <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
-                    <div class="row align-items-center">
-                        <div class="col-xl-4">
-                            <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
+                    @* <div class="row align-items-center"> *@
+                    @* <div class="col-xl-4"> *@
+                    @* <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
                                  data-aos-duration="1000">
                                 <img src="@Url.Content("~/Studiova-1.0.0/assets/images/svgs/rocket-top.svg")" alt="" class="img-fluid animate-spin">
                                 <p class="mb-0 text-white fs-5 text-opacity-70">
                                     A <span style="color:#940000;">showcase of creativity</span>, strategy, and results explore the projects that define us.
                                 </p>
-                            </div>
-                        </div>
-                    </div>
+                            </div> *@
+                    @* </div> *@
+                    @* </div> *@
                     <div class="d-flex align-items-end gap-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                        <h4 class="mb-0 fs-14 text-white lh-1">2,75inch Folding Fin Aircraft Rocket (FFAR)</h4>
+                        <h4 class="mb-0 fs-14 text-white lh-1">2.75inch Folding Fin Aircraft Rocket (FFAR)</h4>
                         @* <a href="javascript:void(0)" class="p-1 ps-7 bg-primary rounded-pill">
                             <span class="bg-white round-52 rounded-circle d-flex align-items-center justify-content-center">
                                 <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
@@ -145,14 +145,15 @@
             <div class="container">
                 <div class="d-flex flex-column gap-5 gap-xl-11">
                     <div class="d-flex flex-column gap-8">
-                        <a href="projects.html" class="btn py-2 ps-3 pe-5"
+                        <a asp-controller="HomePage" asp-action="Index" class="btn py-2 ps-3 pe-5"
                            style="background-color:#940000;" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                             <span class="btn-text text-white pe-2">Back</span>
                             <iconify-icon icon="lucide:arrow-up-right"
                                           class="btn-icon bg-white text-dark round-36 rounded-circle hstack justify-content-center fs-5 shadow-sm"></iconify-icon>
                         </a>
 
-                        <div class="d-md-flex align-items-center gap-4 gap-lg-8" data-aos="fade-up" data-aos-delay="200"
+
+                        @* <div class="d-md-flex align-items-center gap-4 gap-lg-8" data-aos="fade-up" data-aos-delay="200"
                              data-aos-duration="1000">
                             <div class="d-flex flex-column gap-2 py-2 pe-4 pe-lg-8 border-end">
                                 <p class="mb-0">Scope of work</p>
@@ -170,7 +171,7 @@
                                 <p class="mb-0">Website</p>
                                 <p class="mb-0 text-dark fs-5 fw-medium">www.hagatdefence.com.tr</p>
                             </div>
-                        </div>
+                        </div> *@
                     </div>
                     <div class="row gap-4 gap-lg-0">
                         <div class="col-lg-4">
@@ -181,99 +182,201 @@
                         <div class="col-lg-8">
                             <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                                 <p class="fs-5 mb-6">
-                                    Exploring the world of modern artillery systems reveals a diverse array of components, technologies, and tactical applications. Here are some notable aspects of the 122mm Multi Launcher Rocket System (MLRS) you might find interesting:
+                                    The 2.75-inch Folding-Fin Aerial Rocket (FFAR) is a widely-used, lightweight,
+                                    Air-to-ground unguided rocket. It was 2.75 inches (70 mm) in diameter.
+                                    <br />
+                                    Many modern variants of 2.75-inch Folding-Fin Aerial Rocket (FFAR) are still
+                                    serving in many Armies.
                                 </p>
-                                <h4>1. Rocket Launcher Vehicles</h4>
+                                @* <h4>1. Rocket Launcher Vehicles</h4>
                                 <p class="fs-5 mb-6">
-                                    The FFAR launcher vehicles provide mobility, rapid deployment, and precise targeting capabilities. They are designed to carry multiple rockets and ensure quick reloads, making them a core element in modern battlefield artillery strategies.
+                                    The MLRS launcher vehicles provide mobility, rapid deployment, and precise targeting capabilities. They are designed to carry multiple rockets and ensure quick reloads, making them a core element in modern battlefield artillery strategies.
                                 </p>
                                 <h4>2. Fire Control and Navigation Systems</h4>
                                 <p class="fs-5 mb-0">
                                     Advanced fire control systems and navigation aids improve targeting accuracy and operational efficiency. Integrated GPS and automated aiming reduce human error, ensuring that rockets hit designated targets even under challenging conditions.
-                                </p>
+                                </p> *@
                             </div>
                         </div>
                     </div>
                     <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center"
+                        <div class="row text-center">
+
+                            <div class="col-lg-3 col-md-6 mb-4 d-flex flex-column align-items-center"
                                  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                                <img src="~/Studiova-1.0.0/assets/images/portfolio/f1.jpg"
+                                <img src="~/Studiova-1.0.0/assets/images/ffar/ffar1.jpg"
                                      alt="services" class="img-fluid rounded shadow"
-                                     style="width:100%; height:300px; object-fit:cover;">
+                                     style="width:80%; height:230px; object-fit:cover;">
+                                <h5 class="mt-3 fw-bold">Ürün Adı 1</h5>
                             </div>
 
-                            <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center"
+                            <div class="col-lg-3 col-md-6 mb-4 d-flex flex-column align-items-center"
                                  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                                <img src="~/Studiova-1.0.0/assets/images/portfolio/f2.jpg"
+                                <img src="~/Studiova-1.0.0/assets/images/ffar/ffar2.jpg"
                                      alt="services" class="img-fluid rounded shadow"
-                                     style="width:100%; height:300px; object-fit:cover;">
+                                     style="width:80%; height:230px; object-fit:cover;">
+                                <h5 class="mt-3 fw-bold">Ürün Adı 2</h5>
                             </div>
 
-                            <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center"
+                            <div class="col-lg-3 col-md-6 mb-4 d-flex flex-column align-items-center"
                                  data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                                <img src="~/Studiova-1.0.0/assets/images/portfolio/f3.jpg"
+                                <img src="~/Studiova-1.0.0/assets/images/ffar/ffar3.jpg"
                                      alt="services" class="img-fluid rounded shadow"
-                                     style="width:100%; height:300px; object-fit:cover;">
+                                     style="width:80%; height:230px; object-fit:cover;">
+                                <h5 class="mt-3 fw-bold">Ürün Adı 3</h5>
                             </div>
 
-                            <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center"
+                            <div class="col-lg-3 col-md-6 mb-4 d-flex flex-column align-items-center"
                                  data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
-                                <img src="~/Studiova-1.0.0/assets/images/portfolio/f4.jpg"
+                                <img src="~/Studiova-1.0.0/assets/images/ffar/ffar4.jpg"
                                      alt="services" class="img-fluid rounded shadow"
-                                     style="width:100%; height:300px; object-fit:cover;">
+                                     style="width:80%; height:230px; object-fit:cover;">
+                                <h5 class="mt-3 fw-bold">Ürün Adı 4</h5>
+                            </div>
+
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+
+                            <div class="col-lg-3 col-md-6 mb-4 d-flex flex-column align-items-center"
+                                 data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                                <img src="~/Studiova-1.0.0/assets/images/ffar/ffar5.jpg"
+                                     alt="services" class="img-fluid rounded shadow"
+                                     style="width:80%; height:230px; object-fit:cover;">
+                                <h5 class="mt-3 fw-bold">Ürün Adı 4</h5>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 mb-4 d-flex flex-column align-items-center"
+                                 data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                                <img src="~/Studiova-1.0.0/assets/images/ffar/ffar6.jpg"
+                                     alt="services" class="img-fluid rounded shadow"
+                                     style="width:80%; height:230px; object-fit:cover;">
+                                <h5 class="mt-3 fw-bold">Ürün Adı 4</h5>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 mb-4 d-flex flex-column align-items-center"
+                                 data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                                <img src="~/Studiova-1.0.0/assets/images/ffar/ffar7.jpg"
+                                     alt="services" class="img-fluid rounded shadow"
+                                     style="width:80%; height:230px; object-fit:cover;">
+                                <h5 class="mt-3 fw-bold">Ürün Adı 4</h5>
                             </div>
                         </div>
                     </div>
-
+                </div>
         </section>
 
     </div>
 
-    <footer class="footer bg-dark py-5 py-lg-11 py-xl-12">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+    <!-- Get in touch Section -->
+    <section class="get-in-touch py-5 py-lg-11 py-xl-12" style="background-color:#000333;">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-5 mb-8 mb-xl-0">
-                    <div class="d-flex flex-column gap-8 pe-xl-5">
-                        <h2 class="mb-0 text-white">Contact us</h2>
-                        <div class="d-flex flex-column gap-2">
-                            <a href="https://www.wrappixel.com/" target="_blank" class="link-hover hstack gap-3 text-white fs-5">
-                                <iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>
-                                info@hagat.com.tr
-                            </a>
-                            <a href="https://maps.app.goo.gl/hpDp81fqzGt5y4bC8" target="_blank"
-                               class="link-hover hstack gap-3 text-white fs-5">
-                                <iconify-icon icon="lucide:map-pin" class="fs-7 text-primary"></iconify-icon>
-                                info@hagat.com.tr
-                            </a>
-                        </div>
+            <div class="d-flex flex-column gap-5 gap-xl-10">
+
+                <!-- Üst Başlık -->
+                <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
+                     data-aos-duration="1000">
+                    <span class="round-45 flex-shrink-0 text-white rounded-circle hstack justify-content-center fw-medium" style="background-color:#940000; font-size:1.2rem;">6</span>
+                    <hr class="border-line bg-white">
+                    <span class="badge text-bg-dark">Contact Us</span>
+                </div>
+
+                <!-- İçerik: Form + Adres + Google Maps -->
+                <div class="row gx-5 gy-5 justify-content-between align-items-start">
+
+                    <!-- Sol: Form -->
+                    <div class="col-xl-4" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+                        <h2 class="mb-4 text-white">Get in touch</h2>
+                        <form class="d-flex flex-column gap-3"
+                              data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+
+                            <input type="text" class="form-control bg-transparent border-bottom border-white text-white"
+                                   placeholder="Name">
+
+                            <input type="email" class="form-control bg-transparent border-bottom border-white text-white"
+                                   placeholder="Email">
+
+                            <textarea class="form-control bg-transparent border-bottom border-white text-white"
+                                      placeholder="Tell us about your project" rows="3"></textarea>
+
+                            <button type="submit" class="btn btn-dark w-100 d-flex align-items-center justify-content-center gap-2 mt-auto">
+                                Submit message
+                                <iconify-icon icon="lucide:arrow-up-right"
+                                              class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm">
+                                </iconify-icon>
+                            </button>
+                        </form>
                     </div>
+
+                    <!-- Orta: Adres -->
+                    <div class="col-xl-4 d-flex flex-column align-items-center text-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                        <h2 class="mb-4 text-white">Address</h2>
+                        <p class="mb-2 text-white"><i class="bi bi-geo-alt-fill me-2"></i>Alcı OSB Mah. 2019. Cad. No: 12 <br /> Sincan / ANKARA / TURKEY</p>
+                        <p class="mb-2 text-white"><i class="bi bi-envelope-fill me-2"></i>info@hagat.com.tr</p>
+                        <p class="mb-2 text-white"><i class="bi bi-telephone-fill me-2"></i>‪+90 312 473 70 07‬</p>
+                        <br />
+                        @*   <br/>
+                    <br/>
+                    <h2 class="mb-4 text-white">Social Media</h2> *@
+                        <!-- Sosyal Medya -->
+                        <div class="d-flex gap-4 mt-3">
+                            <a href="#" class="text-white fs-10"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/hagatsavunma/" class="text-white fs-10"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/hagat-savunma-117b14218/" class="text-white fs-10"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-white fs-10"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-white fs-10"><i class="bi bi-youtube"></i></a>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <p class="text-center text-white mb-0">© 2025 Hagat Defence Technologies. All Rights Reserved.</p>
+                    </div>
+
+                    <!-- Sağ: Google Maps -->
+                    <div class="col-xl-4" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
+                        <h2 class="mb-4 d-none d-xl-block text-white">Google Map</h2>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d911.3194923941868!2d32.45033097645099!3d39.8002355706335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d319b762449d69%3A0x4c027c9e1ef43247!2sHagat%20Savunma%20Teknolojileri%20A.%C5%9E.!5e0!3m2!1str!2str!4v1759956662540!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+                    </div>
+
                 </div>
-                <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
-                    <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a class="link-hover fs-5 text-white" href="index.html">Home</a></li>
-                        <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
-                        <li><a class="link-hover fs-5 text-white" id="services" href="#services">Services</a></li>
-                        <li><a class="link-hover fs-5 text-white" href="projects.html">Work</a></li>
-                        <li><a class="link-hover fs-5 text-white" href="terms-and-conditions.html">Terms</a></li>
-                        <li><a class="link-hover fs-5 text-white" href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a class="link-hover fs-5 text-white" href="404.html">Error 404</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
-                    <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a class="link-hover fs-5 text-white" href="#!">Facebook</a></li>
-                        <li><a class="link-hover fs-5 text-white" href="#!">Instagram</a></li>
-                        <li><a class="link-hover fs-5 text-white" href="#!">Twitter</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 col-xl-3 mb-8 mb-xl-0">
-                    <p class="mb-0 text-white text-opacity-70 text-md-end">© Hagat Defence copyright 2025</p>
-                </div>
+
             </div>
         </div>
-        @* <p class="mb-0 text-white text-opacity-70 text-md-center mt-10">Distributed by <a class="text-white" href="https://www.themewagon.com" target="_blank">ThemeWagon</a></p> *@
-    </footer>
+    </section>
+
+    <style>
+
+        form input::placeholder,
+        form textarea::placeholder {
+            color: white !important;
+            opacity: 1 !important;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            box-shadow: none;
+            border-bottom: 2px solid white;
+        }
+    </style>
 
     <div class="get-template hstack gap-2">
 

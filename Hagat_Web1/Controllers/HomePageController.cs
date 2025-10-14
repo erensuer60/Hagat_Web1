@@ -47,5 +47,13 @@ namespace Hagat_Web1.Controllers
 		{
 			return PartialView();
 		}
+		public PartialViewResult CompositeMastPartial()
+		{
+			return PartialView();
+		}
+		public PartialViewResult WarheadsPartial()
+		{
+			return PartialView();
+		}
 	}
 }
