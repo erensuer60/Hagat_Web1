@@ -16897,3 +16897,42 @@ ul {
     }
 }
 
+/* --------------------------------------- */
+/* 📱 Mobil Uyumlu Ek Kurallar (Çağrı için) */
+/* --------------------------------------- */
+
+/* Genel düzen — tüm öğeler taşmasın */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Görseller mobilde orantılı küçülsün */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobil menüde header içeriği hizalansın */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Kart, bölüm, galeri gibi yapılar alta insin */
+    .col-lg-4, .col-md-6, .col-xl-3 {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    /* Padding ve marginler mobilde azalsın */
+    section, .container {
+        padding: 20px 10px;
+    }
+}
