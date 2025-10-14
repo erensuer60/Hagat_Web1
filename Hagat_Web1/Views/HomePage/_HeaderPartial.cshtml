@@ -45,6 +45,24 @@
             <source src="~/Studiova-1.0.0/assets/images/backgrounds/hagatvideo.mp4" type="video/mp4" />
         </video>
 
+        <!-- Scroll Down Button + Yazı -->
+        <div class="scroll-down-container position-absolute text-center"
+             style="bottom: 20px; right: 20px; z-index: 10;">
+
+            <!-- Buton -->
+            <a href="#products-section"
+               class="scroll-down-btn d-flex justify-content-center align-items-center mx-auto img-fluid animate-float-logo"
+               style="width: 60px; height: 60px; border-radius: 50%; background-color: rgba(148,0,0,0.85);
+        color: #fff; font-size: 1.5rem; text-decoration: none;">
+                <i class="bi bi-chevron-down"></i>
+            </a>
+
+            <!-- Yazı -->
+            <p class="text-white mt-2 mb-0" style="font-size: 0.9rem; opacity: 0.8;">
+                CLICK FOR DETAILED INFORMATION
+            </p>
+        </div>
+
         <div class="container position-relative z-1 text-center">
             <div class="banner-content d-flex flex-column gap-3 justify-content-center align-items-center"
                  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
@@ -118,4 +136,16 @@
 
 
     }
+</style>
+
+<style>
+    .scroll-down-btn {
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+        .scroll-down-btn:hover {
+            transform: translateY(5px);
+            background-color: rgba(255, 0, 0, 0.9);
+        }
+
 </style>
