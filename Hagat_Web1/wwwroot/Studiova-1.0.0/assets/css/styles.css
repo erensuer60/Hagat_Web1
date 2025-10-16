@@ -16936,3 +16936,32 @@ img, video {
         padding: 20px 10px;
     }
 }
+
+<style >
+* main-header {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%；
+}
+
+</style >
+
+
+<style >
+.banner {
+    display: -webkit-flex; /* Safari için */
+    display: flex;
+    -webkit-justify-content: center; /*
+Safari için */
+    justify-content: center;
+    -webkit-align-items: center; /*
+Safari için */
+    align-items: center;
+}
+
+</style >
