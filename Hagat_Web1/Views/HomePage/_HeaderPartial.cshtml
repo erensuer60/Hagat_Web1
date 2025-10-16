@@ -1,10 +1,8 @@
 ﻿<!-- _HeaderPartial.cshtml -->
-
 <header class="header border-4 border-top position-fixed start-0 top-0 w-100 shadow-sm"
-        style="border-color:#940000 !important; background-color:#292929 !important; z-index: 1000; height: 120px; overflow: hidden;">
+        style="border-color:#940000 !important; background-color:#292929 !important; z-index: 1000; height: 120px;">
     <div class="container">
         <div class="header-wrapper d-flex align-items-center justify-content-between h-100 py-1">
-
             <!-- Logo -->
             <div class="logo d-flex align-items-center">
                 <a href="#top">
@@ -30,115 +28,75 @@
                     </li>
                 </ul>
             </nav>
-
         </div>
     </div>
 </header>
 
-
-
-<!--  Page Wrapper -->
+<!-- Page Wrapper -->
 <div class="page-wrapper overflow-hidden">
+
     <!-- Banner Section -->
-    <section class="banner-section position-relative d-flex align-items-end min-vh-100">
-        <video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline>
+    <section class="banner-section position-relative d-flex align-items-center justify-content-center min-vh-100">
+        <video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+               autoplay muted loop playsinline
+               style="z-index: 1; object-fit: cover; filter: brightness(0.6);">
             <source src="~/Studiova-1.0.0/assets/images/backgrounds/hagatvideo.mp4" type="video/mp4" />
         </video>
 
-        <!-- Scroll Down Button + Yazı -->
-        <div class="scroll-down-container position-absolute text-center"
-             style="bottom: 20px; right: 20px; z-index: 10;">
+        <!-- Banner İçerik -->
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="banner-content d-flex flex-column gap-3 justify-content-start align-items-start"
+                 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <div>
+                    <img src="@Url.Content("~/Studiova-1.0.0/assets/images/logos/hagat-logo-png1.png")"
+                         alt="HAGAT Logo"
+                         class="img-fluid animate-float-logo">
+                </div>
+                <p class="mb-0 text-white fw-semibold">
+                    Defence with <span class="text-danger">high and precise</span> technology
+                </p>
+            </div>
+        </div>
 
-            <!-- Buton -->
+        <!-- Scroll Down Button -->
+        <div class="scroll-down-container position-absolute text-center"
+             style="bottom: 20px; right: 20px; z-index: 3;">
             <a href="#products-section"
                class="scroll-down-btn d-flex justify-content-center align-items-center mx-auto img-fluid animate-float-logo"
-               style="width: 60px; height: 60px; border-radius: 50%; background-color: rgba(148,0,0,0.85);
-        color: #fff; font-size: 1.5rem; text-decoration: none;">
+               style="width: 60px; height: 60px; border-radius: 50%; background-color: rgba(148,0,0,0.85); color: #fff; font-size: 1.5rem; text-decoration: none;">
                 <i class="bi bi-chevron-down"></i>
             </a>
-
-            <!-- Yazı -->
             <p class="text-white mt-2 mb-0" style="font-size: 0.9rem; opacity: 0.8;">
                 CLICK FOR DETAILED INFORMATION
             </p>
         </div>
-
-        <div class="container position-relative z-1 text-center">
-            <div class="banner-content d-flex flex-column gap-3 justify-content-center align-items-center"
-                 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-
-                <!-- Logo -->
-                <div>
-                    <img src="@Url.Content("~/Studiova-1.0.0/assets/images/logos/hagat-logo-png1.png")"
-                         alt="HAGAT Logo"
-                         class="img-fluid animate-float-logo"
-                         style="height: 150px;">
-                </div>
-
-                <!-- Rocket + Yazı -->
-                <p class="mb-0 text-white fs-8 text-opacity-70">
-                    Defence with <span class="text-danger">high and precise</span> technology
-                </p>
-
-            </div>
-        </div>
     </section>
 </div>
 
-<style>
-    /* Banner içerik konumlandırması */
+<!-- CSS -->  
+    <style >
+    /* Banner içeriğini sol alt köşeye konumlandır */
     .banner-content {
-        position: relative;
-        top: -50px; /* İstersen biraz yukarı taşıyabilirsin */
-         left: -600px; 
-    }
-
-        .banner-content img {
-            height: 250px; /* Logo büyüklüğü */
-        }
-
-        .banner-content p {
-            font-size: 5rem; /* Yazı büyüklüğü */
-        }
-
-    /* Responsive ayarlar */
-    media (max-width: 992px) {
-        .banner-content
-
-    {
-        top: -30px;
+        position: absolute;
+        bottom: 10px; /* alttan boşluk */
+        left: 80px; /* soldan boşluk */
+        text-align: left;
     }
 
     .banner-content img {
-        height: 200px;
+        height: 180px;
     }
 
     .banner-content p {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
+    /* Video Safari uyumluluğu */
+    video::-webkit-media-controls {
+        display: none !important;
     }
 
-    media (max-width: 576px) {
-        .banner-content
-
-    {
-        top: -20px;
-    }
-
-    .banner-content img {
-        height: 150px;
-    }
-
-    .banner-content p {
-        font-size: 1.2rem;
-    }
-
-
-    }
-</style>
-
-<style>
+    /* Scroll animasyonu */
     .scroll-down-btn {
         transition: transform 0.3s ease, background-color 0.3s ease;
     }
@@ -148,28 +106,39 @@
             background-color: rgba(255, 0, 0, 0.9);
         }
 
-</style>
+    /* Responsive ayarlar */
+        @@media (max-width: 992px) {
+        .banner-content
 
-<style>
-    * main-header {
-display: -webkit-flex; display: flex;
--webkit-justify-content: space-between; 
-justify-content: space-between; 
--webkit-align-items: center;  align-items: center; 
-padding: 10px 20px;
-width:100%；
+    {
+        bottom: 40px;
+        left: 40px;
     }
-        </style>
 
+    .banner-content img {
+        height: 130px;
+    }
 
-        <style>
-    .banner {
-display: -webkit-flex; /* Safari için */ display: flex;
--webkit-justify-content: center; /*
-Safari için */
-justify-content: center;
--webkit-align-items: center; /*
-Safari için */
-align-items: center;
-}
+    .banner-content p {
+        font-size: 1.3rem;
+    }
+
+    }
+        @@media (max-width: 576px) {
+        .banner-content
+
+    {
+        bottom: 30px;
+        left: 20px;
+    }
+
+    .banner-content img {
+        height: 100px;
+    }
+
+    .banner-content p {
+        font-size: 1.1rem;
+    }
+
+    }
 </style>
