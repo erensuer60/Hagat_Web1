@@ -1,8 +1,10 @@
 ﻿<!-- _HeaderPartial.cshtml -->
+
 <header class="header border-4 border-top position-fixed start-0 top-0 w-100 shadow-sm"
-        style="border-color:#940000 !important; background-color:#292929 !important; z-index: 1000; height: 120px;">
+        style="border-color:#940000 !important; background-color:#292929 !important; z-index: 1000; height: 120px; overflow: hidden;">
     <div class="container">
         <div class="header-wrapper d-flex align-items-center justify-content-between h-100 py-1">
+
             <!-- Logo -->
             <div class="logo d-flex align-items-center">
                 <a href="#top">
@@ -11,9 +13,14 @@
                 </a>
             </div>
 
+            <!-- Mobile Menu Toggle -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none; background: none; color: white; font-size: 24px;">
+                <i class="bi bi-list"></i>
+            </button>
+
             <!-- Menü -->
             <nav class="d-flex align-items-center h-100">
-                <ul class="list-unstyled d-flex align-items-center gap-4 mb-0" style="font-size:20px;">
+                <ul class="list-unstyled d-flex align-items-center gap-4 mb-0 d-none d-lg-flex" style="font-size:20px;">
                     <li><a href="#top" class="text-white fw-bold text-decoration-none hover-text-danger">Home</a></li>
                     <li><a href="#products-section" class="text-white fw-bold text-decoration-none hover-text-danger">Products</a></li>
                     <li><a href="#whatwedo-section" class="text-white fw-bold text-decoration-none hover-text-danger">About</a></li>
@@ -28,75 +35,211 @@
                     </li>
                 </ul>
             </nav>
+
         </div>
     </div>
 </header>
 
-<!-- Page Wrapper -->
-<div class="page-wrapper overflow-hidden">
+<!-- Mobile Navigation Menu -->
+<div class="collapse navbar-collapse d-lg-none" id="navbarNav" style="background-color: #292929; position: fixed; top: 120px; left: 0; right: 0; z-index: 999; border-top: 4px solid #940000;">
+    <ul class="navbar-nav text-center py-3">
+        <li class="nav-item py-2">
+            <a href="#top" class="nav-link text-white fw-bold text-decoration-none hover-text-danger" data-bs-toggle="collapse" data-bs-target="#navbarNav">Home</a>
+        </li>
+        <li class="nav-item py-2">
+            <a href="#products-section" class="nav-link text-white fw-bold text-decoration-none hover-text-danger" data-bs-toggle="collapse" data-bs-target="#navbarNav">Products</a>
+        </li>
+        <li class="nav-item py-2">
+            <a href="#whatwedo-section" class="nav-link text-white fw-bold text-decoration-none hover-text-danger" data-bs-toggle="collapse" data-bs-target="#navbarNav">About</a>
+        </li>
+        <li class="nav-item py-2">
+            <a href="#references-section" class="nav-link text-white fw-bold text-decoration-none hover-text-danger" data-bs-toggle="collapse" data-bs-target="#navbarNav">References</a>
+        </li>
+        <li class="nav-item py-2">
+            <a href="#recentnews-section" class="nav-link text-white fw-bold text-decoration-none hover-text-danger" data-bs-toggle="collapse" data-bs-target="#navbarNav">Recent News</a>
+        </li>
+        <li class="nav-item py-2">
+            <a href="#contact-section" class="nav-link text-white fw-bold text-decoration-none hover-text-danger" data-bs-toggle="collapse" data-bs-target="#navbarNav">Contact Us</a>
+        </li>
+        <li class="nav-item py-2 d-flex justify-content-center align-items-center">
+            <img src="~/Studiova-1.0.0/assets/images/svgs/pngtree-turkish-flag-pin-badge-png-image_6098799.svg"
+                 alt="Türk Bayrağı"
+                 style="width:35px; height:35px; object-fit:cover; vertical-align:middle;">
+        </li>
+    </ul>
+</div>
 
+
+
+<!--  Page Wrapper -->
+<div class="page-wrapper overflow-hidden">
     <!-- Banner Section -->
-    <section class="banner-section position-relative d-flex align-items-center justify-content-center min-vh-100">
-        <video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
-               autoplay muted loop playsinline
-               style="z-index: 1; object-fit: cover; filter: brightness(0.6);">
+    <section class="banner-section position-relative d-flex align-items-end min-vh-100">
+        <video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline webkit-playsinline preload="metadata">
             <source src="~/Studiova-1.0.0/assets/images/backgrounds/hagatvideo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
         </video>
 
-        <!-- Banner İçerik -->
-        <div class="container position-relative" style="z-index: 2;">
-            <div class="banner-content d-flex flex-column gap-3 justify-content-start align-items-start"
-                 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                <div>
-                    <img src="@Url.Content("~/Studiova-1.0.0/assets/images/logos/hagat-logo-png1.png")"
-                         alt="HAGAT Logo"
-                         class="img-fluid animate-float-logo">
-                </div>
-                <p class="mb-0 text-white fw-semibold">
-                    Defence with <span class="text-danger">high and precise</span> technology
-                </p>
-            </div>
-        </div>
-
-        <!-- Scroll Down Button -->
+        <!-- Scroll Down Button + Yazı -->
         <div class="scroll-down-container position-absolute text-center"
-             style="bottom: 20px; right: 20px; z-index: 3;">
+             style="bottom: 20px; right: 20px; z-index: 10;">
+
+            <!-- Buton -->
             <a href="#products-section"
                class="scroll-down-btn d-flex justify-content-center align-items-center mx-auto img-fluid animate-float-logo"
-               style="width: 60px; height: 60px; border-radius: 50%; background-color: rgba(148,0,0,0.85); color: #fff; font-size: 1.5rem; text-decoration: none;">
+               style="width: 60px; height: 60px; border-radius: 50%; background-color: rgba(148,0,0,0.85);
+        color: #fff; font-size: 1.5rem; text-decoration: none;">
                 <i class="bi bi-chevron-down"></i>
             </a>
+
+            <!-- Yazı -->
             <p class="text-white mt-2 mb-0" style="font-size: 0.9rem; opacity: 0.8;">
                 CLICK FOR DETAILED INFORMATION
             </p>
         </div>
+
+        <div class="container position-relative z-1 text-center">
+            <div class="banner-content d-flex flex-column gap-3 justify-content-center align-items-center"
+                 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+
+                <!-- Logo -->
+                <div>
+                    <img src="@Url.Content("~/Studiova-1.0.0/assets/images/logos/hagat-logo-png1.png")"
+                         alt="HAGAT Logo"
+                         class="img-fluid animate-float-logo"
+                         style="height: 150px;">
+                </div>
+
+                <!-- Rocket + Yazı -->
+                <p class="mb-0 text-white fs-8 text-opacity-70">
+                    Defence with <span class="text-danger">high and precise</span> technology
+                </p>
+
+            </div>
+        </div>
     </section>
 </div>
 
-<!-- CSS -->  
-    <style >
-    /* Banner içeriğini sol alt köşeye konumlandır */
+<style>
+    /* Banner içerik konumlandırması */
     .banner-content {
-        position: absolute;
-        bottom: 10px; /* alttan boşluk */
-        left: 80px; /* soldan boşluk */
-        text-align: left;
+        position: relative;
+        top: -50px; /* İstersen biraz yukarı taşıyabilirsin */
+        left: -600px;
     }
 
-    .banner-content img {
-        height: 180px;
+        .banner-content img {
+            height: 250px; /* Logo büyüklüğü */
+        }
+
+        .banner-content p {
+            font-size: 5rem; /* Yazı büyüklüğü */
+        }
+
+    /* Responsive ayarlar */
+    @@media (max-width: 992px) {
+        .banner-content {
+            top: -30px;
+            left: -300px;
+        }
+
+            .banner-content img {
+                height: 200px;
+            }
+
+            .banner-content p {
+                font-size: 1.5rem;
+            }
     }
 
-    .banner-content p {
-        font-size: 2rem;
+    @@media (max-width: 768px) {
+        .banner-content {
+            top: -20px;
+            left: -200px;
+        }
+
+            .banner-content img {
+                height: 180px;
+            }
+
+            .banner-content p {
+                font-size: 1.3rem;
+            }
     }
 
-    /* Video Safari uyumluluğu */
-    video::-webkit-media-controls {
-        display: none !important;
+    @@media (max-width: 576px) {
+        .banner-content {
+            top: -10px;
+            left: -100px;
+        }
+
+            .banner-content img {
+                height: 150px;
+            }
+
+            .banner-content p {
+                font-size: 1.2rem;
+            }
     }
 
-    /* Scroll animasyonu */
+    /* iOS specific responsive fixes */
+    @@media screen and (-webkit-min-device-pixel-ratio: 2) {
+        .banner-content {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+    }
+
+    /* iPhone specific adjustments */
+    @@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+        .banner-content {
+            left: -50px;
+        }
+    }
+
+    /* iPhone Plus specific adjustments */
+    @@media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+        .banner-content {
+            left: -80px;
+        }
+    }
+
+    /* iPad specific adjustments */
+    @@media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) {
+        .banner-content {
+            left: -400px;
+        }
+    }
+
+    /* Mobile menu improvements for iOS */
+    .navbar-toggler {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+    /* iOS specific mobile menu styling */
+    @@media screen and (-webkit-min-device-pixel-ratio: 0) {
+        .navbar-collapse {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+    }
+
+    /* Fix iOS Safari address bar issues */
+    @@supports (-webkit-touch-callout: none) {
+        .banner-section {
+            min-height: -webkit-fill-available;
+        }
+    }
+</style>
+
+<style>
     .scroll-down-btn {
         transition: transform 0.3s ease, background-color 0.3s ease;
     }
@@ -106,39 +249,4 @@
             background-color: rgba(255, 0, 0, 0.9);
         }
 
-    /* Responsive ayarlar */
-        @@media (max-width: 992px) {
-        .banner-content
-
-    {
-        bottom: 40px;
-        left: 40px;
-    }
-
-    .banner-content img {
-        height: 130px;
-    }
-
-    .banner-content p {
-        font-size: 1.3rem;
-    }
-
-    }
-        @@media (max-width: 576px) {
-        .banner-content
-
-    {
-        bottom: 30px;
-        left: 20px;
-    }
-
-    .banner-content img {
-        height: 100px;
-    }
-
-    .banner-content p {
-        font-size: 1.1rem;
-    }
-
-    }
 </style>

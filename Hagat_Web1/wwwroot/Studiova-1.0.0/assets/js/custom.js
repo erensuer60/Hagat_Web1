@@ -1,6 +1,14 @@
 $(function () {
+    // iOS Safari detection
+    function isIOS() {
+        return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    }
 
-    // Header Scroll
+    function isSafari() {
+        return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    }
+
+    // Header Scroll with iOS compatibility
     $(window).scroll(function () {
         if ($(window).scrollTop() >= 60) {
             $("header").addClass("fixed-header");
@@ -39,43 +47,60 @@ $(function () {
 
     // Count
     $('.count').each(function () {
-		$(this).prop('Counter', 0).animate({
-			Counter: $(this).text()
-		}, {
-			duration: 1000,
-			easing: 'swing',
-			step: function (now) {
-				$(this).text(Math.ceil(now));
-			}
-		});
-	});
-
-
-    // ScrollToTop
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 1000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
         });
+    });
+
+
+    // ScrollToTop with iOS compatibility
+    function scrollToTop() {
+        if (isIOS() || isSafari()) {
+            // Use requestAnimationFrame for smoother scrolling on iOS
+            const scrollTo = function () {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                if (currentScroll > 0) {
+                    window.scrollTo(0, currentScroll - 50);
+                    requestAnimationFrame(scrollTo);
+                }
+            };
+            scrollTo();
+        } else {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     }
 
     const btn = document.getElementById("scrollToTopBtn");
-    btn.addEventListener("click", scrollToTop);
+    if (btn) {
+        btn.addEventListener("click", scrollToTop);
+    }
 
-    window.onscroll = function () {
+    // Use passive event listener for better performance on iOS
+    window.addEventListener('scroll', function () {
         const btn = document.getElementById("scrollToTopBtn");
-        if (document.documentElement.scrollTop > 100 || document.body.scrollTop > 100) {
-            btn.style.display = "flex";
-        } else {
-            btn.style.display = "none";
+        if (btn) {
+            if (document.documentElement.scrollTop > 100 || document.body.scrollTop > 100) {
+                btn.style.display = "flex";
+            } else {
+                btn.style.display = "none";
+            }
         }
-    };
+    }, { passive: true });
 
 
     // Aos
-	AOS.init({
-		once: true,
-	});
+    AOS.init({
+        once: true,
+    });
 
 });
 

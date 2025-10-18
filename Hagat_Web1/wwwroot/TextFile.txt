@@ -1,12 +1,151 @@
-﻿With its know-how and experienced staff Hagat Defense Technologies can manufacture launchers, MRS pods and warheads of all sizes and diameters using filament winding method.
-                                    <br />
-                                    <br />
-                                    So far, we have produced 107mm, 122mm, 302mm diameter launchers and pods for Multiple Launch Rocket Systems (MLRS). While manufacturing these launchers we used our own filament winding machine in the production process.
-                                    <br />
-                                    <br />
-                                    We are also manufacturing warheads in various sizes with different production
-                                    techniques. Till now we manufactured MK 82, MK 84 aircraft ammunitions.
-                                    <br />
-                                    <br />
-                                    Apart from these, we have also manufacturing warheads in different weights and
-                                    sizes designed to be launched from various Unmanned Aerial Vehicles (UAVs).
+﻿<!-- _HeaderPartial.cshtml -->
+
+<header class="header border-4 border-top position-fixed start-0 top-0 w-100 shadow-sm"
+        style="border-color:#940000 !important; background-color:#292929 !important; z-index: 1000; height: 120px; overflow: hidden;">
+    <div class="container">
+        <div class="header-wrapper d-flex align-items-center justify-content-between h-100 py-1">
+
+            <!-- Logo -->
+            <div class="logo d-flex align-items-center">
+                <a href="#top">
+                    <img src="~/Studiova-1.0.0/assets/images/logos/logo-b.png" alt="Hagat Logo"
+                         class="img-fluid" style="height:80px;">
+                </a>
+            </div>
+
+            <!-- Menü -->
+            <nav class="d-flex align-items-center h-100">
+                <ul class="list-unstyled d-flex align-items-center gap-4 mb-0" style="font-size:20px;">
+                    <li><a href="#top" class="text-white fw-bold text-decoration-none hover-text-danger">Home</a></li>
+                    <li><a href="#products-section" class="text-white fw-bold text-decoration-none hover-text-danger">Products</a></li>
+                    <li><a href="#whatwedo-section" class="text-white fw-bold text-decoration-none hover-text-danger">About</a></li>
+                    <li><a href="#references-section" class="text-white fw-bold text-decoration-none hover-text-danger">References</a></li>
+                    <li><a href="#recentnews-section" class="text-white fw-bold text-decoration-none hover-text-danger">Recent News</a></li>
+                    <li><a href="#contact-section" class="text-white fw-bold text-decoration-none hover-text-danger">Contact Us</a></li>
+                    <!-- 🇹🇷 Türk Bayrağı -->
+                    <li class="d-flex align-items-center">
+                        <img src="~/Studiova-1.0.0/assets/images/svgs/pngtree-turkish-flag-pin-badge-png-image_6098799.svg"
+                             alt="Türk Bayrağı"
+                             style="width:35px; height:35px; object-fit:cover; vertical-align:middle;">
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</header>
+
+
+
+<!--  Page Wrapper -->
+<div class="page-wrapper overflow-hidden">
+    <!-- Banner Section -->
+    <section class="banner-section position-relative d-flex align-items-end min-vh-100">
+        <video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline>
+            <source src="~/Studiova-1.0.0/assets/images/backgrounds/hagatvideo.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Scroll Down Button + Yazı -->
+        <div class="scroll-down-container position-absolute text-center"
+             style="bottom: 20px; right: 20px; z-index: 10;">
+
+            <!-- Buton -->
+            <a href="#products-section"
+               class="scroll-down-btn d-flex justify-content-center align-items-center mx-auto img-fluid animate-float-logo"
+               style="width: 60px; height: 60px; border-radius: 50%; background-color: rgba(148,0,0,0.85);
+        color: #fff; font-size: 1.5rem; text-decoration: none;">
+                <i class="bi bi-chevron-down"></i>
+            </a>
+
+            <!-- Yazı -->
+            <p class="text-white mt-2 mb-0" style="font-size: 0.9rem; opacity: 0.8;">
+                CLICK FOR DETAILED INFORMATION
+            </p>
+        </div>
+
+        <div class="container position-relative z-1 text-center">
+            <div class="banner-content d-flex flex-column gap-3 justify-content-center align-items-center"
+                 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+
+                <!-- Logo -->
+                <div>
+                    <img src="@Url.Content("~/Studiova-1.0.0/assets/images/logos/hagat-logo-png1.png")"
+                         alt="HAGAT Logo"
+                         class="img-fluid animate-float-logo"
+                         style="height: 150px;">
+                </div>
+
+                <!-- Rocket + Yazı -->
+                <p class="mb-0 text-white fs-8 text-opacity-70">
+                    Defence with <span class="text-danger">high and precise</span> technology
+                </p>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    /* Banner içerik konumlandırması */
+    .banner-content {
+        position: relative;
+        top: -50px; /* İstersen biraz yukarı taşıyabilirsin */
+         left: -600px; 
+    }
+
+        .banner-content img {
+            height: 250px; /* Logo büyüklüğü */
+        }
+
+        .banner-content p {
+            font-size: 5rem; /* Yazı büyüklüğü */
+        }
+
+    /* Responsive ayarlar */
+    media (max-width: 992px) {
+        .banner-content
+
+    {
+        top: -30px;
+    }
+
+    .banner-content img {
+        height: 200px;
+    }
+
+    .banner-content p {
+        font-size: 1.5rem;
+    }
+
+    }
+
+    media (max-width: 576px) {
+        .banner-content
+
+    {
+        top: -20px;
+    }
+
+    .banner-content img {
+        height: 150px;
+    }
+
+    .banner-content p {
+        font-size: 1.2rem;
+    }
+
+
+    }
+</style>
+
+<style>
+    .scroll-down-btn {
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+        .scroll-down-btn:hover {
+            transform: translateY(5px);
+            background-color: rgba(255, 0, 0, 0.9);
+        }
+
+</style>
