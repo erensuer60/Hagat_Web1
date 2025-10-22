@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="~/Studiova-1.0.0/assets/libs/owl.carousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="~/Studiova-1.0.0/assets/libs/aos-master/dist/aos.css">
     <link rel="stylesheet" href="~/Studiova-1.0.0/assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 
 <body id="top" style="margin:0; padding:0; background-color:#000333;">
@@ -58,53 +59,232 @@
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
     <script>
+        // iOS Safari compatibility fixes
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        }
+
+        function isSafari() {
+            return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        }
+
         // Header scroll görünürlüğü
         document.addEventListener("DOMContentLoaded", function () {
             const header = document.querySelector(".header");
-            window.addEventListener("scroll", function () {
-                const currentScroll = window.pageYOffset;
+
+            // Use passive event listener for better performance on iOS
+            const scrollHandler = function () {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
                 if (currentScroll > 250) {
                     header.classList.add("show");
                 } else {
                     header.classList.remove("show");
                 }
-            });
+            };
+
+            window.addEventListener("scroll", scrollHandler, { passive: true });
         });
-
-               document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute("href").substring(1);
-                const targetEl = document.getElementById(targetId);
-
-                if (targetEl) {
-                    window.scrollTo({
-                        top: targetEl.offsetTop - 80, // header yüksekliği kadar boşluk bırak
-                        behavior: "smooth"
-                    });
-                }
-            });
-        });
-
 
         // Scroll to Top
         document.getElementById("scrollToTopBtn").addEventListener("click", function () {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
+
+            const scrollBtn = document.getElementById("scrollToTopBtn");
+
+        scrollBtn.addEventListener("click", function () {
+            // Tüm cihazlarda hızlı ve güvenli scroll
+            document.body.scrollTop = 0; // Safari
+            document.documentElement.scrollTop = 0; // Chrome, Firefox, Edge
+        });
+
+        // Smooth scrolling with iOS compatibility
+        // document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        //     anchor.addEventListener("click", function (e) {
+        //         e.preventDefault();
+        //         const targetId = this.getAttribute("href").substring(1);
+        //         const targetEl = document.getElementById(targetId);
+
+        //         if (targetEl) {
+        //             const offsetTop = targetEl.offsetTop - 80;
+
+        //             if (isIOS() || isSafari()) {
+        //                 // Use requestAnimationFrame for smoother scrolling on iOS
+        //                 const scrollTo = function() {
+        //                     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        //                     const distance = offsetTop - currentScroll;
+        //                     const step = distance / 20;
+
+        //                     if (Math.abs(distance) > 1) {
+        //                         window.scrollTo(0, currentScroll + step);
+        //                         requestAnimationFrame(scrollTo);
+        //                     } else {
+        //                         window.scrollTo(0, offsetTop);
+        //                     }
+        //                 };
+        //                 scrollTo();
+        //             } else {
+        //                 window.scrollTo({
+        //                     top: offsetTop,
+        //                     behavior: "smooth"
+        //                 });
+        //             }
+        //         }
+        //     });
+        // });
+
+        // // Scroll to Top with iOS compatibility
+
+        // function isIOS() {
+        //     return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        // }
+
+        // function isSafari() {
+        //     return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        // }
+
+        // const scrollBtn = document.getElementById("scrollToTopBtn");
+
+        //         scrollBtn.addEventListener("click", function () {
+        //     const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        //     const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+        //     if (isIOSDevice || isSafariBrowser) {
+        //         let stop = false;
+
+        //         // Kullanıcı dokunursa animasyonu durdur
+        //         const onUserScroll = () => { stop = true; };
+        //         window.addEventListener('touchstart', onUserScroll, { once: true });
+        //         window.addEventListener('touchmove', onUserScroll, { once: true });
+
+        //         const scrollStep = () => {
+        //             if (stop) return;
+        //             const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        //             if (currentScroll > 0) {
+        //                 const step = Math.max(currentScroll / 10, 20); // mesafe azaldıkça step küçülür
+        //                 window.scrollTo(0, currentScroll - step);
+        //                 requestAnimationFrame(scrollStep);
+        //             }
+        //         };
+        //         scrollStep();
+        //     } else {
+        //         // Diğer tarayıcılar
+        //         window.scrollTo({ top: 0, behavior: "smooth" });
+        //     }
+        // });
+
+
+        // Fix iOS viewport height issues
+        function setViewportHeight() {
+            if (isIOS()) {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+        }
+
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+        window.addEventListener('orientationchange', function() {
+            setTimeout(setViewportHeight, 100);
+        });
+
+
     </script>
 
     <style>
+
+        html {
+            scroll-behavior: smooth; /* Modern tarayıcılarda smooth scroll */
+        }
+
+        /* iOS Safari compatibility fixes */
+        :root {
+            --vh: 1vh;
+        }
+
+        /* Fix iOS viewport height issues */
+        .min-vh-100 {
+            min-height: 100vh;
+            min-height: calc(var(--vh, 1vh) * 100);
+        }
+
         /* Başlangıçta header gizli */
         .header {
             transform: translateY(-100%);
             transition: transform 0.3s ease-in-out;
+            -webkit-transform: translateY(-100%);
+            -webkit-transition: -webkit-transform 0.3s ease-in-out;
         }
 
             /* Scroll sonrası header görünür */
             .header.show {
                 transform: translateY(0);
+                -webkit-transform: translateY(0);
             }
+
+        /* iOS touch improvements */
+        .btn, .nav-link, a {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* /* Fix iOS scrolling momentum */
+        body {
+            -webkit-overflow-scrolling: touch;
+            overflow-scrolling: touch;
+        }
+
+        */
+        /* iOS video fixes */
+        video {
+            -webkit-playsinline: true;
+            -moz-playsinline: true;
+            -ms-playsinline: true;
+            playsinline: true;
+        }
+
+        /* Fix iOS font rendering */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* iOS specific fixes for animations */
+        /*   @@media screen and (-webkit-min-device-pixel-ratio: 0) {
+                    .animate-float-logo {
+                        -webkit-animation: float 3s ease-in-out infinite;
+                        animation: float 3s ease-in-out infinite;
+                    }
+                } */
+
+        @@keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @@-webkit-keyframes float {
+            0%, 100% {
+                -webkit-transform: translateY(0px);
+            }
+
+            50% {
+                -webkit-transform: translateY(-10px);
+            }
+        }
+
     </style>
+
+
 
 </body>
 

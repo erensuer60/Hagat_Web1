@@ -1,6 +1,14 @@
 $(function () {
+    // iOS Safari detection
+    function isIOS() {
+        return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    }
 
-    // Header Scroll
+    function isSafari() {
+        return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    }
+
+    // Header Scroll with iOS compatibility
     $(window).scroll(function () {
         if ($(window).scrollTop() >= 60) {
             $("header").addClass("fixed-header");
