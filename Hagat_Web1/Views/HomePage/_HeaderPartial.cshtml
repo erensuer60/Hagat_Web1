@@ -2,34 +2,54 @@
 
 <header class="header border-4 border-top position-fixed start-0 top-0 w-100 shadow-sm"
         style="border-color:#940000 !important; background-color:#292929 !important; z-index: 1000; height: 120px; overflow: hidden;">
-    <div class="container">
+    <div class="container-fluid">
         <div class="header-wrapper d-flex align-items-center justify-content-between h-100 py-1">
 
             <!-- Logo -->
             <div class="logo d-flex align-items-center">
                 <a href="#top">
                     <img src="~/Studiova-1.0.0/assets/images/logos/logo-b.png" alt="Hagat Logo"
-                         class="img-fluid" style="height:80px;">
+                         class="img-fluid header-logo" style="height:80px; max-width: 120px;">
                 </a>
             </div>
 
-            <!-- Menü -->
-            <nav class="d-flex align-items-center h-100">
-                <ul class="list-unstyled d-flex align-items-center gap-4 mb-0" style="font-size:20px;">
-                    <li><a href="#top" class="text-white fw-bold text-decoration-none hover-text-danger">Home</a></li>
-                    <li><a href="#products-section" class="text-white fw-bold text-decoration-none hover-text-danger">Products</a></li>
-                    <li><a href="#whatwedo-section" class="text-white fw-bold text-decoration-none hover-text-danger">About</a></li>
-                    <li><a href="#references-section" class="text-white fw-bold text-decoration-none hover-text-danger">References</a></li>
-                    <li><a href="#recentnews-section" class="text-white fw-bold text-decoration-none hover-text-danger">Recent News</a></li>
-                    <li><a href="#contact-section" class="text-white fw-bold text-decoration-none hover-text-danger">Contact Us</a></li>
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler d-md-none border-0 bg-transparent" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                    style="color: white; font-size: 1.5rem;">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <!-- Navigation Menu -->
+            <nav class="d-none d-md-flex align-items-center h-100">
+                <ul class="list-unstyled d-flex align-items-center gap-3 gap-lg-4 mb-0 header-nav">
+                    <li><a href="#top" class="text-white fw-bold text-decoration-none hover-text-danger nav-link">Home</a></li>
+                    <li><a href="#products-section" class="text-white fw-bold text-decoration-none hover-text-danger nav-link">Products</a></li>
+                    <li><a href="#whatwedo-section" class="text-white fw-bold text-decoration-none hover-text-danger nav-link">About</a></li>
+                    <li><a href="#references-section" class="text-white fw-bold text-decoration-none hover-text-danger nav-link">References</a></li>
+                    <li><a href="#recentnews-section" class="text-white fw-bold text-decoration-none hover-text-danger nav-link">Recent News</a></li>
+                    <li><a href="#contact-section" class="text-white fw-bold text-decoration-none hover-text-danger nav-link">Contact Us</a></li>
                     <!-- 🇹🇷 Türk Bayrağı -->
                     <li class="d-flex align-items-center">
                         <img src="~/Studiova-1.0.0/assets/images/svgs/pngtree-turkish-flag-pin-badge-png-image_6098799.svg"
                              alt="Türk Bayrağı"
-                             style="width:35px; height:35px; object-fit:cover; vertical-align:middle;">
+                             class="flag-icon" style="width:35px; height:35px; object-fit:cover; vertical-align:middle;">
                     </li>
                 </ul>
             </nav>
+
+            <!-- Mobile Navigation Menu -->
+            <div class="collapse navbar-collapse d-md-none" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#top" class="nav-link text-white fw-bold">Home</a></li>
+                    <li class="nav-item"><a href="#products-section" class="nav-link text-white fw-bold">Products</a></li>
+                    <li class="nav-item"><a href="#whatwedo-section" class="nav-link text-white fw-bold">About</a></li>
+                    <li class="nav-item"><a href="#references-section" class="nav-link text-white fw-bold">References</a></li>
+                    <li class="nav-item"><a href="#recentnews-section" class="nav-link text-white fw-bold">Recent News</a></li>
+                    <li class="nav-item"><a href="#contact-section" class="nav-link text-white fw-bold">Contact Us</a></li>
+                </ul>
+            </div>
 
         </div>
     </div>
@@ -53,32 +73,38 @@
             <a href="#products-section"
                class="scroll-down-btn d-flex justify-content-center align-items-center mx-auto img-fluid animate-float-logo"
                style="width: 60px; height: 60px; border-radius: 50%; background-color: rgba(148,0,0,0.85);
-        color: #fff; font-size: 1.5rem; text-decoration: none;">
+        color: #fff; font-size: 1.5rem; text-decoration: none; min-width: 44px; min-height: 44px;">
                 <i class="bi bi-chevron-down"></i>
             </a>
 
             <!-- Yazı -->
-            <p class="text-white mt-2 mb-0" style="font-size: 0.9rem; opacity: 0.8;">
+            <p class="text-white mt-2 mb-0 scroll-down-text" style="font-size: 0.9rem; opacity: 0.8;">
                 CLICK FOR DETAILED INFORMATION
             </p>
         </div>
 
-        <div class="container position-relative z-1 text-center">
-            <div class="banner-content d-flex flex-column gap-3 justify-content-center align-items-center"
+        <!-- Banner Content - Logo positioned bottom left, centered vertically with text -->
+        <div class="container position-relative z-1 h-100">
+            <div class="banner-content d-flex align-items-end h-100"
                  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
 
-                <!-- Logo -->
-                <div>
-                    <img src="@Url.Content("~/Studiova-1.0.0/assets/images/logos/hagat-logo-png1.png")"
-                         alt="HAGAT Logo"
-                         class="img-fluid animate-float-logo"
-                         style="height: 150px;">
-                </div>
+                <!-- Logo and Text Container -->
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Logo -->
+                    <div class="logo-container">
+                        <img src="@Url.Content("~/Studiova-1.0.0/assets/images/logos/hagat-logo-png1.png")"
+                             alt="HAGAT Logo"
+                             class="img-fluid animate-float-logo"
+                             style="height: 120px; max-width: 200px;">
+                    </div>
 
-                <!-- Rocket + Yazı -->
-                <p class="mb-0 text-white fs-8 text-opacity-70">
-                    Defence with <span class="text-danger">high and precise</span> technology
-                </p>
+                    <!-- Text -->
+                    <div class="text-container">
+                        <p class="mb-0 text-white fw-bold" style="font-size: 1.8rem; line-height: 1.2;">
+                            Defence with <span class="text-danger">high and precise</span> technology
+                        </p>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -86,96 +112,215 @@
 </div>
 
 <style>
-    /* iOS/macOS safe area for fixed header and alignment fixes */
-    :root {
-        --safe-area-top: env(safe-area-inset-top, 0px);
-    }
-
-    @@supports (constant(safe-area-inset-top)) {
-        :root {
-            --safe-area-top: constant(safe-area-inset-top);
-        }
-    }
-
-    .header {
-        padding-top: var(--safe-area-top) !important;
-        min-height: 120px;
-        height: auto !important;
-        overflow: visible !important; /* avoid clipping in Safari */
-        -webkit-transform: translateZ(0); /* hint for Safari paint */
-    }
-
-        .header .logo img {
-            max-height: 80px;
-            width: auto;
-            object-fit: contain;
-            -webkit-user-drag: none;
-        }
-
-        .header nav ul {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem; /* Safari 14+ supports flex gap */
-            margin: 0;
-            padding: 0;
-        }
-
-    @@supports not (gap: 1rem) {
-        .header nav ul > li {
-            margin-left: 1.25rem;
-        }
-
-            .header nav ul > li:first-child {
-                margin-left: 0;
-            }
-    }
-
-    /* Banner content centering and responsive logo sizing */
+    /* Banner content positioning - responsive and cross-platform compatible */
     .banner-content {
         position: relative;
-        top: 0;
-        left: 0;
-        text-align: center;
+        padding-bottom: 80px; /* Space from bottom */
+        padding-left: 15px; /* Small left padding */
     }
 
-        .banner-content img {
-            height: clamp(90px, 14vw, 220px) !important; /* override inline heights reliably */
-            width: auto;
-            max-width: 90vw;
+        .banner-content .logo-container img {
+            height: 120px;
+            max-width: 200px;
             object-fit: contain;
         }
 
-        .banner-content p {
-            font-size: clamp(1rem, 2.8vw, 2.25rem);
+        .banner-content .text-container p {
+            font-size: 1.8rem;
             line-height: 1.2;
-            margin: 0.25rem 0 0;
+            margin: 0;
         }
 
-    /* Responsive adjustments */
-    @@media (max-width: 992px) {
-        .header .logo img {
-            max-height: 70px;
-        }
+    /* Responsive design for tablets and smaller screens */
+    @media (max-width: 992px) {
+        .banner-content
 
-        .header nav ul {
-            gap: 1rem;
-        }
+    {
+        padding-bottom: 60px;
     }
 
-    @@media (max-width: 576px) {
-        .header .logo img {
-            max-height: 60px;
+    .banner-content .logo-container img {
+        height: 100px;
+        max-width: 160px;
+    }
+
+    .banner-content .text-container p {
+        font-size: 1.4rem;
+    }
+
+    }
+
+    /* Responsive design for mobile devices */
+    @media (max-width: 768px) {
+        .banner-content
+
+    {
+        padding-bottom: 40px;
+        padding-left: 10px;
+    }
+
+    .banner-content .logo-container img {
+        height: 80px;
+        max-width: 120px;
+    }
+
+    .banner-content .text-container p {
+        font-size: 1.1rem;
+    }
+
+    .banner-content .d-flex {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+
+    }
+
+    /* Extra small devices */
+    @media (max-width: 576px) {
+        .banner-content
+
+    {
+        padding-bottom: 30px;
+        padding-left: 5px;
+    }
+
+    .banner-content .logo-container img {
+        height: 60px;
+        max-width: 100px;
+    }
+
+    .banner-content .text-container p {
+        font-size: 0.9rem;
+    }
+
+    }
+
+    /* iOS Safari specific fixes */
+    @supports (-webkit-touch-callout: none) {
+        .banner-content
+
+    {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    .banner-content .logo-container img {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    }
+
+    /* Ensure proper viewport handling on all devices */
+    .banner-section {
+        min-height: 100vh;
+        min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+    }
+
+    /* Header responsive styles */
+    .header {
+        transition: all 0.3s ease;
+    }
+
+    .header-logo {
+        transition: all 0.3s ease;
+    }
+
+    .header-nav .nav-link {
+        transition: color 0.3s ease;
+        white-space: nowrap;
+    }
+
+        .header-nav .nav-link:hover {
+            color: #dc3545 !important;
         }
 
-        .header nav ul {
-            gap: 0.75rem;
-        }
+    /* Mobile header adjustments */
+    @media (max-width: 768px) {
+        .header
+
+    {
+        height: 100px !important;
+    }
+
+    .header-logo {
+        height: 60px !important;
+        max-width: 100px !important;
+    }
+
+    .navbar-collapse {
+        background-color: rgba(41, 41, 41, 0.95);
+        margin-top: 10px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        padding: 8px 15px;
+    }
+
+    }
+
+    /* Extra small devices */
+    @media (max-width: 576px) {
+        .header
+
+    {
+        height: 90px !important;
+    }
+
+    .header-logo {
+        height: 50px !important;
+        max-width: 80px !important;
+    }
+
+    .header-nav {
+        gap: 2rem !important;
+    }
+
+    }
+
+    /* iOS Safari specific header fixes */
+    @supports (-webkit-touch-callout: none) {
+        .header
+
+    {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    }
+
+    /* Ensure proper touch targets on mobile */
+    @media (max-width: 768px) {
+        .navbar-toggler
+
+    {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
     }
 </style>
 
 <style>
     .scroll-down-btn {
         transition: transform 0.3s ease, background-color 0.3s ease;
+        touch-action: manipulation; /* Improve touch responsiveness */
     }
 
         .scroll-down-btn:hover {
@@ -183,4 +328,59 @@
             background-color: rgba(255, 0, 0, 0.9);
         }
 
+        .scroll-down-btn:active {
+            transform: translateY(2px);
+        }
+
+    /* Responsive scroll down button */
+    @media (max-width: 768px) {
+        .scroll-down-container
+
+    {
+        bottom: 15px !important;
+        right: 15px !important;
+    }
+
+    .scroll-down-btn {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.2rem !important;
+    }
+
+    .scroll-down-text {
+        font-size: 0.8rem !important;
+    }
+
+    }
+
+    @media (max-width: 576px) {
+        .scroll-down-container
+
+    {
+        bottom: 10px !important;
+        right: 10px !important;
+    }
+
+    .scroll-down-btn {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 1rem !important;
+    }
+
+    .scroll-down-text {
+        font-size: 0.7rem !important;
+    }
+
+    }
+
+    /* iOS Safari specific fixes for scroll button */
+    @supports (-webkit-touch-callout: none) {
+        .scroll-down-btn
+
+    {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    }
 </style>
