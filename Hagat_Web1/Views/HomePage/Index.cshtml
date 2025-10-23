@@ -120,6 +120,15 @@
             });
         });
 
+                // Hide scrollToTopBtn only on iOS mobile devices
+        document.addEventListener("DOMContentLoaded", function () {
+            const scrollBtn = document.getElementById("scrollToTopBtn");
+            if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+                scrollBtn.style.display = "none";
+            }
+        });
+
+
         // Scroll to Top with iOS compatibility
         document.getElementById("scrollToTopBtn").addEventListener("click", function () {
             if (isIOS() || isSafari()) {
